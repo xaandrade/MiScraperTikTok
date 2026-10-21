@@ -12,9 +12,9 @@ URL = f"https://www.tiktok.com/@{USUARIO}"
 
 
 def scraper_tiktok():
-    print(f"Iniciando scraper para la cuenta @{USUARIO}...")
+    print(f"Iniciando extracción para @{USUARIO}...")
 
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("exports", exist_ok=True)
 
     options = webdriver.ChromeOptions()
     options.add_argument("--disable-gpu")
@@ -31,53 +31,28 @@ def scraper_tiktok():
 
     try:
         driver.get(URL)
-        time.sleep(6) 
+        time.sleep(6)
 
-        png_path = f"data/{USUARIO}_profile.png"
+        # CAMBIO 2: Captura en carpeta exports
+        png_path = f"exports/{USUARIO}_profile.png"
         driver.save_screenshot(png_path)
-        print(f"Captura de pantalla guardada en: {png_path}")
 
-        try:
-            nombre = driver.find_element(
-                By.XPATH, '//h1[@data-e2e="user-title"]'
-            ).text
-        except:
-            nombre = "No detectado"
-
-        try:
-            subnombre = driver.find_element(
-                By.XPATH, '//h2[@data-e2e="user-subtitle"]'
-            ).text
-        except:
-            subnombre = "No detectado"
-
-        try:
-            siguiendo = driver.find_element(
-                By.XPATH, '//strong[@data-e2e="following-count"]'
-            ).text
-        except:
-            siguiendo = "No detectado"
-
-        try:
-            seguidores = driver.find_element(
-                By.XPATH, '//strong[@data-e2e="followers-count"]'
-            ).text
-        except:
-            seguidores = "No detectado"
-
-        try:
-            likes = driver.find_element(
-                By.XPATH, '//strong[@data-e2e="likes-count"]'
-            ).text
-        except:
-            likes = "No detectado"
-
-        try:
-            bio = driver.find_element(
-                By.XPATH, '//h2[@data-e2e="user-bio"]'
-            ).text
-        except:
-            bio = "Sin biografía"
+        nombre = driver.find_element(
+            By.XPATH, '//h1[@data-e2e="user-title"]'
+        ).text
+        subnombre = driver.find_element(
+            By.XPATH, '//h2[@data-e2e="user-subtitle"]'
+        ).text
+        siguiendo = driver.find_element(
+            By.XPATH, '//strong[@data-e2e="following-count"]'
+        ).text
+        seguidores = driver.find_element(
+            By.XPATH, '//strong[@data-e2e="followers-count"]'
+        ).text
+        likes = driver.find_element(
+            By.XPATH, '//strong[@data-e2e="likes-count"]'
+        ).text
+        bio = driver.find_element(By.XPATH, '//h2[@data-e2e="user-bio"]').text
 
         driver.execute_script("window.scrollBy(0, 500);")
         time.sleep(3)
@@ -108,20 +83,18 @@ def scraper_tiktok():
             "videos_recientes": videos_links[:6],
         }
 
-        json_path = f"data/{USUARIO}_profile.json"
+        json_path = f"exports/{USUARIO}_profile.json"
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(datos_perfil, f, ensure_ascii=False, indent=4)
-        print(f"Archivo JSON guardado en: {json_path}")
 
-        csv_path = f"data/{USUARIO}_profile.csv"
+        csv_path = f"exports/{USUARIO}_profile.csv"
         df = pd.DataFrame([datos_perfil])
         df.to_csv(csv_path, index=False, encoding="utf-8-sig")
-        print(f"Archivo CSV guardado en: {csv_path}")
 
-        print("\n¡Proceso completado con éxito!")
+        print("¡Proceso completado! Archivos guardados en 'exports/'.")
 
     except Exception as e:
-        print(f"Ocurrió un error durante el scraping: {e}")
+        print(f"Error: {e}")
     finally:
         driver.quit()
 

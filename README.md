@@ -13,17 +13,17 @@ Este proyecto es un scraper automatizado desarrollado en Python utilizando Selen
 
 MiScraperTikTok/
 │
-├── data/                    # Archivos generados (.json, .csv y .png)
+├── exports/                   
 │   ├── mrbeast_profile.csv
 │   ├── mrbeast_profile.json
 │   └── mrbeast_profile.png
 │
-├── src/                     # Código fuente principal
+├── app/                    
 │   └── scraper.py
 │
-├── .gitignore               # Archivos excluidos del repositorio
-├── README.md                # Documentación del proyecto
-└── requirements.txt         # Dependencias del proyecto
+├── .gitignore                
+├── README.md                
+└── requirements.txt         
 
 ## Instalación y Uso
 
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 Ejecutar el scraper:
 
 Bash
-python src/scraper.py
+python app/scraper.py
 bash
 ```
 ---
@@ -55,7 +55,7 @@ pip install pandas
 Ejecuta el script ajustado a la nueva estructura:
 
 Bash
-python src/scraper.py
+python app/scraper.py
 Al finalizar la ejecución, abre la carpeta data/ en la barra lateral de VS Code y verás:
 
 mrbeast_profile.png (La captura de pantalla del perfil).
