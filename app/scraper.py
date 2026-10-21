@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-USUARIO = "mrbeast"
+USUARIO = "willsmith"
 URL = f"https://www.tiktok.com/@{USUARIO}"
 
 
