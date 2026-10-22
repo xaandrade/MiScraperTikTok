@@ -75,41 +75,10 @@ Al finalizar la ejecución, la carpeta exports/ contendrá la captura de pantall
 ## Resultados 
 Como ejemplo se uso el usario de tiktok de MrBeast
 
-{
-    "usuario": "mrbeast",
-    "nombre": "MrBeast",
-    "subnombre": "mrbeast",
-    "siguiendo": "346",
-    "seguidores": "144.7M",
-    "likes_totales": "1.5B",
-    "biografia": "Checkout My New Book!👇",
-    "url_perfil": "https://www.tiktok.com/@mrbeast",
-    "cantidad_posteos_analizados": 11,
-    "titulos_y_descripciones_posteos": [
-        "Biografía del usuario: Checkout My New Book!👇",
-        "Don't be like Nolan and go play #modernwarfare4 today! creado por MrBeast con la música original sound de MrBeast",
-        "The breakfast of champions 😋 creado por MrBeast con la música original sound de Satisfying Lips® 💋",
-        "Guess who’s the olympic medalist? creado por MrBeast con la música original sound de MrBeast",
-        "It really be like that 😭 creado por MrBeast con la música original sound de MrBeast",
-        "Bro stands no chance 😤 MrBeast Lab Mega Mutators are now available at Walmart, Target, and Amazon creado por MrBeast con la música original sound de MrBeast",
-        "Bro is so natural at aura farming 🤧 creado por MrBeast con la música original sound de MrBeast",
-        "wifey 🫶🏻 creado por MrBeast con la música sonido original de Eva 🫰",
-        "“guys don’t laugh” 😭 @Erling Haaland  creado por MrBeast con la música original sound de MrBeast",
-        "Messing around in the @MrBeast Lab  creado por MrBeast con la música original sound de MrBeast",
-        "scariest meal of my life @Erling Haaland  creado por MrBeast con la música Haaland (Ha Ha Ha) de Ann"
-    ],
-    "imagenes_portadas_guardadas": [
-        "exports/thumbnails\\post_1.jpg",
-        "exports/thumbnails\\post_2.jpg",
-        "exports/thumbnails\\post_3.jpg",
-        "exports/thumbnails\\post_4.jpg",
-        "exports/thumbnails\\post_5.jpg",
-        "exports/thumbnails\\post_6.jpg",
-        "exports/thumbnails\\post_7.jpg",
-        "exports/thumbnails\\post_8.jpg",
-        "exports/thumbnails\\post_9.jpg",
-        "exports/thumbnails\\post_10.jpg"
-    ],
+
+![alt text](image-1.png)
+
+
     "analisis_psicologico_big_five": {
         "Apertura": "78%",
         "Responsabilidad": "92%",
