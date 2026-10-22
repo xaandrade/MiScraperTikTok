@@ -51,6 +51,7 @@ MiScraperTikTok/
 1. Clonar el repositorio
 
 git clone https://github.com/xaandrade/MiScraperTikTok.git
+
 cd MiScraperTikTok
 
 2. Instalar dependencias
