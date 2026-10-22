@@ -3,9 +3,42 @@
     "nombre": "MrBeast",
     "subnombre": "mrbeast",
     "siguiendo": "346",
-    "seguidores": "144.6M",
+    "seguidores": "144.7M",
     "likes_totales": "1.5B",
     "biografia": "Checkout My New Book!👇",
     "url_perfil": "https://www.tiktok.com/@mrbeast",
-    "videos_recientes": []
+    "cantidad_posteos_analizados": 11,
+    "titulos_y_descripciones_posteos": [
+        "Biografía del usuario: Checkout My New Book!👇",
+        "Don't be like Nolan and go play #modernwarfare4 today! creado por MrBeast con la música original sound de MrBeast",
+        "The breakfast of champions 😋 creado por MrBeast con la música original sound de Satisfying Lips® 💋",
+        "Guess who’s the olympic medalist? creado por MrBeast con la música original sound de MrBeast",
+        "It really be like that 😭 creado por MrBeast con la música original sound de MrBeast",
+        "Bro stands no chance 😤 MrBeast Lab Mega Mutators are now available at Walmart, Target, and Amazon creado por MrBeast con la música original sound de MrBeast",
+        "Bro is so natural at aura farming 🤧 creado por MrBeast con la música original sound de MrBeast",
+        "wifey 🫶🏻 creado por MrBeast con la música sonido original de Eva 🫰",
+        "“guys don’t laugh” 😭 @Erling Haaland  creado por MrBeast con la música original sound de MrBeast",
+        "Messing around in the @MrBeast Lab  creado por MrBeast con la música original sound de MrBeast",
+        "scariest meal of my life @Erling Haaland  creado por MrBeast con la música Haaland (Ha Ha Ha) de Ann"
+    ],
+    "imagenes_portadas_guardadas": [
+        "exports/thumbnails\\post_1.jpg",
+        "exports/thumbnails\\post_2.jpg",
+        "exports/thumbnails\\post_3.jpg",
+        "exports/thumbnails\\post_4.jpg",
+        "exports/thumbnails\\post_5.jpg",
+        "exports/thumbnails\\post_6.jpg",
+        "exports/thumbnails\\post_7.jpg",
+        "exports/thumbnails\\post_8.jpg",
+        "exports/thumbnails\\post_9.jpg",
+        "exports/thumbnails\\post_10.jpg"
+    ],
+    "analisis_psicologico_big_five": {
+        "Apertura": "78%",
+        "Responsabilidad": "92%",
+        "Extraversion": "88%",
+        "Amabilidad": "76%",
+        "Neuroticismo": "18%",
+        "Justificacion": "El análisis psicocomportamental del creador revela un perfil caracterizado por una altísima Responsabilidad (92%) y Extraversión (88%). A nivel visual y textual, se evidencia una fuerte orientación al logro, planificación estratégica y disciplina comercial: la presencia recurrente de productos propios ('MrBeast Lab Mega Mutators'), menciones de venta masiva (Walmart, Target, Amazon), promoción de libros y el reconocimiento de hitos (el botón de diamante de YouTube y placas conmemorativas) denotan un enfoque hipermetódico hacia el éxito profesional. En cuanto a la Extraversión, las imágenes muestran una constante inserción en entornos gregarios, rodeado de colaboradores, atletas de élite (Erling Haaland, medallistas olímpicos) y gestos expresivos directos hacia el espectador (sonrisas amplias, guiños, contacto visual firme). La Apertura a la experiencia (78%) se manifiesta en la continua experimentación lúdica, la creación de formatos no convencionales y la rápida asimilación de la cibercultura ('aura farming', dinámicas de memes contemporáneos). La Amabilidad (76%) se proyecta a través de una dinámica grupal horizontal y cálida, uso de lenguaje afectivo e inclusivo ('wifey', 'bro', humor compartido sin hostilidad), facilitando la cohesión social. Finalmente, el Neuroticismo es marcadamente bajo (18%), proyectando gran estabilidad emocional, resiliencia ante el escrutinio masivo, autoconfianza y una notable capacidad de autorregulación emocional en cámara, incluso en situaciones de alta presión o dramatización cómica."
+    }
 }

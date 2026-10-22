@@ -1,3 +1,8 @@
 selenium
-webdriver-manager
+selenium-stealth
+google-genai
 pandas
+python-dotenv
+webdriver-manager
+Pillow
+requests

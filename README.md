@@ -1,66 +1,123 @@
-# TikTok Profile Scraper (Selenium & Python)
+# TikTok Profile Scraper & Multimodal Big Five Personality Analysis
 
-Este proyecto es un scraper automatizado desarrollado en Python utilizando Selenium para extraer métricas, datos públicos y capturas de pantalla de cuentas de TikTok sin la necesidad de APIs de terceros.
+Este proyecto es un scraper automatizado y herramienta de análisis psicológico multimodal desarrollado en Python. Permite extraer métricas, biografía, descripciones de publicaciones, capturas de pantalla y las portadas/miniaturas de los últimos videos de cuentas de TikTok utilizando Selenium con selenium-stealth para evadir restricciones antibot. 
 
-# Tecnologías Utilizadas
+Posteriormente, se integra con la inteligencia artificial de Google Gemini (google-genai con el modelo Gemini 3.8 Flash) para realizar un perfilamiento psicológico multimodal basado en el modelo de los Cinco Grandes (Big Five), evaluando simultáneamente los textos de los posteos y el contenido visual de las imágenes capturadas.
 
-- **Python 3.x**: Lenguaje principal de desarrollo.
-- **Selenium**: Automatización e interacción con el navegador Chrome.
-- **Pandas**: Generación y exportación de archivos CSV.
-- **JSON / CSV**: Formatos de exportación de los datos extraídos.
-
-# Estructura del Proyecto
-
-MiScraperTikTok/
-│
-├── exports/                   
-│   ├── mrbeast_profile.csv
-│   ├── mrbeast_profile.json
-│   └── mrbeast_profile.png
-│
-├── app/                    
-│   └── scraper.py
-│
-├── .gitignore                
-├── README.md                
-└── requirements.txt         
-
-## Instalación y Uso
-
-
-Clonar el repositorio:
-
-```bash
-
-git clone [https://github.com/TU_USUARIO/MiScraperTikTok.git](https://github.com/TU_USUARIO/MiScraperTikTok.git)
-cd MiScraperTikTok
-Instalar dependencias:
-
-Bash
-pip install -r requirements.txt
-Ejecutar el scraper:
-
-Bash
-python app/scraper.py
-bash
-```
 ---
 
-### Paso 4: Instalar `pandas` y probar la ejecución
+## Características Principales
 
-En la terminal de VS Code, instala `pandas`:
+- Scraping Antidetect: Navegación automatizada en Chrome parcheada con selenium-stealth` para evitar bloqueos por Captcha y detección de bots.
+- Análisis Multimodal (Texto + Imagen): Gemini 3.8 Flash procesa el lenguaje conductual de los textos y analiza visualmente la estética, contexto y expresiones de los videos.
+- Resiliencia ante Límites de Tasa (Rate Limits): Sistema de reintentos con *exponential backoff* para manejar errores 503 UNAVAILABLE en la API de Gemini.
+- Exportación Multiformato: Genera datos estructurados en JSON, una tabla formateada para Excel en CSV y capturas/miniaturas locales en PNG/JPG.
 
-```bash
-pip install pandas
-Ejecuta el script ajustado a la nueva estructura:
+---
 
-Bash
+## Tecnologías Utilizadas
+
+- Python 3.x: Lenguaje de programación base.
+- Selenium & selenium-stealth: Automatización e interacción emulada de navegador web.
+- Google GenAI SDK (google-genai): Conexión con el modelo multimodal Gemini 3.8 Flash.
+- Pillow (PIL) & Requests: Procesamiento y descarga automatizada de imágenes.
+- Pandas: Procesamiento de datos y exportación tabular.
+- python-dotenv: Manejo seguro de llaves de API mediante variables de entorno (.env).
+
+---
+
+## Estructura del Proyecto
+MiScraperTikTok/
+│
+├── exports/
+│   ├── thumbnails/             
+│   │   ├── post_1.jpg
+│   │   └── ...
+│   ├── mrbeast_profile.csv     
+│   ├── mrbeast_profile.json    
+│   └── mrbeast_profile.png    
+│
+├── app/
+│   └── scraper.py              
+│
+├── .env                        
+├── .gitignore
+├── README.md
+└── requirements.txt            #
+
+---
+
+## Instalación y Configuración
+1. Clonar el repositorio
+
+git clone https://github.com/xaandrade/MiScraperTikTok.git
+cd MiScraperTikTok
+
+2. Instalar dependencias
+Asegúrate de instalar todos los paquetes requeridos listados en requirements.txt:
+
+pip install -r requirements.txt
+
+3. Configurar la clave de API
+Crea un archivo .env en la raíz del proyecto y agrega tu clave de Google Gemini:
+
+GEMINI_API_KEY=tu_clave_api_aqui
+
+---
+## Ejecución
+Ejecuta el script principal desde tu terminal:
 python app/scraper.py
-Al finalizar la ejecución, abre la carpeta data/ en la barra lateral de VS Code y verás:
 
-mrbeast_profile.png (La captura de pantalla del perfil).
 
-mrbeast_profile.json (Los datos estructurados en formato JSON).
+Al finalizar la ejecución, la carpeta exports/ contendrá la captura de pantalla general, las portadas individuales descargadas en exports/thumbnails/ y el reporte psicológico Big Five sintetizado en los archivos mrbeast_profile.json y mrbeast_profile.csv.
 
-mrbeast_profile.csv (Los datos organizados en tabla CSV).
-```
+---
+## Resultados 
+Como ejemplo se uso el usario de tiktok de MrBeast
+
+{
+    "usuario": "mrbeast",
+    "nombre": "MrBeast",
+    "subnombre": "mrbeast",
+    "siguiendo": "346",
+    "seguidores": "144.7M",
+    "likes_totales": "1.5B",
+    "biografia": "Checkout My New Book!👇",
+    "url_perfil": "https://www.tiktok.com/@mrbeast",
+    "cantidad_posteos_analizados": 11,
+    "titulos_y_descripciones_posteos": [
+        "Biografía del usuario: Checkout My New Book!👇",
+        "Don't be like Nolan and go play #modernwarfare4 today! creado por MrBeast con la música original sound de MrBeast",
+        "The breakfast of champions 😋 creado por MrBeast con la música original sound de Satisfying Lips® 💋",
+        "Guess who’s the olympic medalist? creado por MrBeast con la música original sound de MrBeast",
+        "It really be like that 😭 creado por MrBeast con la música original sound de MrBeast",
+        "Bro stands no chance 😤 MrBeast Lab Mega Mutators are now available at Walmart, Target, and Amazon creado por MrBeast con la música original sound de MrBeast",
+        "Bro is so natural at aura farming 🤧 creado por MrBeast con la música original sound de MrBeast",
+        "wifey 🫶🏻 creado por MrBeast con la música sonido original de Eva 🫰",
+        "“guys don’t laugh” 😭 @Erling Haaland  creado por MrBeast con la música original sound de MrBeast",
+        "Messing around in the @MrBeast Lab  creado por MrBeast con la música original sound de MrBeast",
+        "scariest meal of my life @Erling Haaland  creado por MrBeast con la música Haaland (Ha Ha Ha) de Ann"
+    ],
+    "imagenes_portadas_guardadas": [
+        "exports/thumbnails\\post_1.jpg",
+        "exports/thumbnails\\post_2.jpg",
+        "exports/thumbnails\\post_3.jpg",
+        "exports/thumbnails\\post_4.jpg",
+        "exports/thumbnails\\post_5.jpg",
+        "exports/thumbnails\\post_6.jpg",
+        "exports/thumbnails\\post_7.jpg",
+        "exports/thumbnails\\post_8.jpg",
+        "exports/thumbnails\\post_9.jpg",
+        "exports/thumbnails\\post_10.jpg"
+    ],
+    "analisis_psicologico_big_five": {
+        "Apertura": "78%",
+        "Responsabilidad": "92%",
+        "Extraversion": "88%",
+        "Amabilidad": "76%",
+        "Neuroticismo": "18%",
+        "Justificacion": "El análisis psicocomportamental del creador revela un perfil caracterizado por una altísima Responsabilidad (92%) y Extraversión (88%). A nivel visual y textual, se evidencia una fuerte orientación al logro, planificación estratégica y disciplina comercial: la presencia recurrente de productos propios ('MrBeast Lab Mega Mutators'), menciones de venta masiva (Walmart, Target, Amazon), promoción de libros y el reconocimiento de hitos (el botón de diamante de YouTube y placas conmemorativas) denotan un enfoque hipermetódico hacia el éxito profesional. En cuanto a la Extraversión, las imágenes muestran una constante inserción en entornos gregarios, rodeado de colaboradores, atletas de élite (Erling Haaland, medallistas olímpicos) y gestos expresivos directos hacia el espectador (sonrisas amplias, guiños, contacto visual firme). La Apertura a la experiencia (78%) se manifiesta en la continua experimentación lúdica, la creación de formatos no convencionales y la rápida asimilación de la cibercultura ('aura farming', dinámicas de memes contemporáneos). La Amabilidad (76%) se proyecta a través de una dinámica grupal horizontal y cálida, uso de lenguaje afectivo e inclusivo ('wifey', 'bro', humor compartido sin hostilidad), facilitando la cohesión social. Finalmente, el Neuroticismo es marcadamente bajo (18%), proyectando gran estabilidad emocional, resiliencia ante el escrutinio masivo, autoconfianza y una notable capacidad de autorregulación emocional en cámara, incluso en situaciones de alta presión o dramatización cómica."
+    }
+}
+
+![alt text](image.png)

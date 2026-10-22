@@ -1,4 +1,24 @@
-__pycache__/
-*.pyc
+# Variables de entorno y credenciales (¡SÚPER IMPORTANTE NO SUBIR!)
+.env
+.env.*
+
+# Entornos virtuales de Python
 venv/
+env/
+ENV/
+.venv/
+
+# Byte-compiled / archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Archivos de exportación generados por el scraper (Opcional: descomenta si no deseas subir los JSON/PNG/CSV)
+# exports/
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
 .vscode/
+.idea/
