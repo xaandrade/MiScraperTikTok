@@ -73,7 +73,7 @@ Al finalizar la ejecución, la carpeta exports/ contendrá la captura de pantall
 
 ---
 ## Resultados 
-Como ejemplo se uso el usario de tiktok de MrBeast
+Como ejemplo se uso el usuario de tiktok de MrBeast
 
 
 ![alt text](image-1.png)
